@@ -1,0 +1,49 @@
+{
+  "pages": {
+    "/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/page.css",
+      "static/chunks/app/page.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
+    ],
+    "/onBoarding/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/onBoarding/page.css",
+      "static/chunks/app/onBoarding/page.js"
+    ],
+    "/onBoarding/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/onBoarding/layout.css",
+      "static/chunks/app/onBoarding/layout.js"
+    ],
+    "/auth/[id]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/auth/[id]/page.js"
+    ],
+    "/(authentication)/login/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(authentication)/login/page.js"
+    ],
+    "/(authentication)/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(authentication)/layout.js"
+    ],
+    "/howItWorks/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/howItWorks/page.css",
+      "static/chunks/app/howItWorks/page.js"
+    ]
+  }
+}

@@ -1,0 +1,138 @@
+/*!***************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./app/page.module.css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************/
+.page_main__nw1Wk{
+    width: 100%;
+    background-color: #FAFAFA;
+}
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/components/landingPageFinalVersion/styles/navbar.module.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************/
+.navbar_TopNav__1YyQj {
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .navbar_TopNav_nav__5uOnG {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 30px 10px 20px;
+    max-width: inherit;
+  }
+  .navbar_TopNav_nav__5uOnG a {
+    text-decoration: none;
+    font-weight: 400;
+  }
+  .navbar_TopNav_left__4_X_6 {
+    width: 100%;
+    flex: 1;
+  }
+  .navbar_TopNav_left__4_X_6 img {
+    width: 300px;
+  }
+  .navbar_TopNav_right__Z_qAo {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    flex: 2;
+  }
+  .navbar_TopNav_profile__y9bi5 {
+    width: 37px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .navbar_TopNav_flag__ZFwbW {
+    width: 37px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .navbar_TopNav_responsive_menu__w1V0B {
+    display: none;
+  }
+  .navbar_TopNav_menu_responsive__dH9aK {
+    display: none;
+  }
+  .navbar_TopNav_network__b2ewI {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 13px;
+  }
+  .navbar_TopNav_network_icon__l2gbV {
+    width: 45px;
+    height: 45px;
+    background: rgba(228, 228, 228, 0.6);
+    box-shadow: 0px 4px 10px 4px rgba(160, 156, 156, 0.1);
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .navbar_TopNav_network_icon__l2gbV img{
+    width: 20px;
+    height: 20px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  } 
+  @media (max-width:1210px) {
+    .navbar_TopNav_network__b2ewI {
+      display: none;
+    }
+    
+  }
+  @media (max-width: 954px) {
+    .navbar_TopNav_right__Z_qAo {
+      display: none;
+    }
+    .navbar_TopNav_nav__5uOnG {
+      gap: 20px;
+      padding: 20px 0 10px 0;
+    }
+    .navbar_TopNav_responsive_menu__w1V0B {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 14px;
+    }
+    .navbar_TopNav_menu__gpGdF {
+      max-width: 40px;
+      width: 100%;
+      -o-object-fit: cover;
+         object-fit: cover;
+      cursor: pointer;
+    }
+    .navbar_TopNav_profile__y9bi5 {
+      max-width: 40px;
+      width: 100%;
+      -o-object-fit: cover;
+         object-fit: cover;
+    }
+    .navbar_TopNav_left__4_X_6 {
+      width: 100%;
+      flex: 2;
+    }
+    .navbar_TopNav_left__4_X_6 img {
+      width: 100%;
+      max-width: 300px;
+    }
+    .navbar_TopNav_menu_responsive__dH9aK {
+      display: block;
+      position: relative;
+      width: 100%;
+    }
+  }
+  
+  .navbar_image-section__fmGFR{
+    width: 100%;
+  }

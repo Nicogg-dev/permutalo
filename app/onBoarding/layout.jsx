@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
       <Box component="body">
         <Box component="main" className={styles.home_main}>
             <Box component="div" className={styles.home_content}>
-                <Nabvar />
+                {/* <Nabvar /> */}
                 <FormContextProvider>
                     {children}
                 </FormContextProvider>

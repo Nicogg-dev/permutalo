@@ -9,11 +9,13 @@ import StepButton from '@mui/material/StepButton';
 import Button from '@mui/material/Button';
 import "./mainStepper.css";
 import { FormContext } from '@/src/context/FormContext';
-import BasicInfo from './step/basicInfo';
+import BasicInfo from './step_one/BasicInfoOne';
 import { successAlert } from '../alerts/success';
 import { errorsAlert } from '../alerts/errors';
+import BasicInfoOne from './step_one/BasicInfoOne';
+import BasicInfoTwo from './step_two/BasicInfoTwo';
 
-const steps = ['Informacion Basica', 'Declaraciones', 'Controlados y Socios', 'Informacion Persona o Beneficiario'];
+const steps = ['Paso 1', 'Paso 2'];
 
 export default function MainSteppers() {
 
@@ -47,7 +49,7 @@ export default function MainSteppers() {
       isLastStep() && !allStepsCompleted()
         ? // It's the last step, but not all steps have been completed,
         // find the first step that has been completed
-        steps.findIndex((step, i) => !(i in completed))
+        steps.findIndex((_, i) => !(i in completed))
         : activeStep + 1;
     setActiveStep(newActiveStep);
   };
@@ -144,6 +146,12 @@ export default function MainSteppers() {
             </React.Fragment>
           ) : (
             <React.Fragment>
+              {
+                activeStep === 0 && <BasicInfoOne />
+              }
+              {
+                activeStep === 1 && <BasicInfoTwo />
+              }
               <BasicInfo />
 
               <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>

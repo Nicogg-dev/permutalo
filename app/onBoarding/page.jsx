@@ -21,10 +21,7 @@ export default function Home() {
   return (
     <Box component="div" className={styles.main}>
       <Typography variant="h2" marginTop={5} fontWeight={600} component="h1" sx={{color:"#002663"}}>
-        Formulario Onboarding
-      </Typography>
-      <Typography variant="h5" fontWeight={600} component="p" sx={{color:"#002663"}}>
-        Al diligenciar este formulario usted está solicitando utilizar los servicios de Benky
+        Formulario Permutalo
       </Typography>
 
       <MainSteppers />

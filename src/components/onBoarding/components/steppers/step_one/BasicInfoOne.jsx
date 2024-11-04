@@ -104,7 +104,7 @@ export default function BasicInfoOne() {
                     name="value_property"
                     type="number"
                     size="small"
-                    error={errors.nombre}
+                    error={errors.value_property}
                     control={control}
                     fullWidth
 
@@ -116,7 +116,7 @@ export default function BasicInfoOne() {
                     name="meters"
                     type="number"
                     size="small"
-                    error={errors.nombre}
+                    error={errors.meters}
                     control={control}
                     fullWidth
 
@@ -128,7 +128,7 @@ export default function BasicInfoOne() {
                     name="number_rooms"
                     type="number"
                     size="small"
-                    error={errors.nombre}
+                    error={errors.number_rooms}
                     control={control}
                     fullWidth
 
@@ -140,7 +140,7 @@ export default function BasicInfoOne() {
                     name="number_bathrooms"
                     type="number"
                     size="small"
-                    error={errors.nombre}
+                    error={errors.number_bathrooms}
                     control={control}
                     fullWidth
 
@@ -154,7 +154,7 @@ export default function BasicInfoOne() {
                     size="small"
                     multiline
                     rows={4}
-                    error={errors.nombre}
+                    error={errors.description}
                     control={control}
                     fullWidth
                 />

@@ -20,7 +20,7 @@ export default function Home() {
 
   return (
     <Box component="div" className={styles.main}>
-      <Typography variant="h2" marginTop={5} fontWeight={600} component="h1" sx={{color:"#002663"}}>
+      <Typography variant="h2" marginTop={5} fontWeight={600} component="h1" sx={{color:"#008593"}}>
         Formulario Permutalo
       </Typography>
 

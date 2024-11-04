@@ -11,7 +11,7 @@ import DynamicTable from '../components/basicInfo/partners';
 import FinalBeneficiary from '../components/basicInfo/finalBeneficiary';
 import Representante from '../components/basicInfo/representante';
 
-export default function BasicInfoTwo() {
+export default function BasicInfoOneCopy() {
 
     const { control, errors,setValue, watch } = React.useContext(FormContext);
 

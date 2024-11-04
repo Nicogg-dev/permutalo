@@ -42,7 +42,7 @@ export default function Home() {
               fontWeight={600}
               component="h1"
               className="text-center"
-              sx={{ color: "#002663" }}
+              sx={{ color: "#008593" }}
             >
               Oficial de Cumplimiento
             </Typography>
@@ -51,7 +51,7 @@ export default function Home() {
               className="text-center"
               fontWeight={600}
               component="p"
-              sx={{ color: "#002663" }}
+              sx={{ color: "#008593" }}
             >
               Administracion para validar los usuarios registrados
             </Typography>
@@ -81,7 +81,7 @@ export default function Home() {
               fontWeight={600}
               component="h1"
               className="text-center"
-              sx={{ color: "#002663" }}
+              sx={{ color: "#008593" }}
             >
                 No tienes permisos para acceder a esta página
             </Typography>

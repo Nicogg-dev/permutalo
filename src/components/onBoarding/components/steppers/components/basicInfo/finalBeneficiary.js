@@ -73,7 +73,7 @@ const FinalBeneficiary = ({ control, errors, watch = ()=>{} }) => {
       ))}
       <TableRow>
         <TableCell colSpan={4} align="right">
-          <Button type="button" onClick={addRow} variant="contained" sx={{ margin: "auto", backgroundColor: '#002663', color: '#fff', textTransform: 'none', padding: '2px 16px' }}>
+          <Button type="button" onClick={addRow} variant="contained" sx={{ margin: "auto", backgroundColor: '#008593', color: '#fff', textTransform: 'none', padding: '2px 16px' }}>
             Añadir Contacto
           </Button>
         </TableCell>

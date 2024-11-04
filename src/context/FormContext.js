@@ -13,14 +13,17 @@ const schema = yup.object().shape({
     is: "Persona Jurídica",
     then: (schema) => schema.required('Este campo es requerido'),
   }),
-  name: yup.string().when('type_person', {
-    is:"Persona Natural",
-    then: (schema) => schema.required('Este campo es requerido'),
-  }),
-  lastname: yup.string().when('type_person', {
-    is:"Persona Natural",
-    then: (schema) => schema.required('Este campo es requerido'),
-  }),
+  name: yup.string().required('Este campo es requerido'),
+  lastname: yup.string().required('Este campo es requerido'),
+  type_of_property: yup.string().required('Este campo es requerido'),
+  deparment: yup.string().required('Este campo es requerido'),
+  value_property: yup.string().required('Este campo es requerido'),
+  meters: yup.string().required('Este campo es requerido'),
+  number_rooms: yup.string().required('Este campo es requerido'),
+  number_bathrooms: yup.string().required('Este campo es requerido'),
+  description: yup.string().required('Este campo es requerido'),
+  description: yup.string().required('Este campo es requerido'),
+  direction_property: yup.string().required('Este campo es requerido'),
   genre: yup.string().when('type_person', {
     is:"Persona Natural",
     then: (schema) => schema.required('Este campo es requerido'),
@@ -191,7 +194,23 @@ const schema = yup.object().shape({
     return true; // Permitir que el campo esté vacío
     }),
   }),
-bank_certificate:yup.mixed().when('type_person', {
+  photos_property: yup.mixed()
+  .test('filePresence', 'El archivo es requerido', value => {
+    return value !== undefined && value !== null && value !== ''; // Verificar si el archivo está presente
+  })
+  .test('fileType', 'Solo se permiten archivos PDF, JPG O PNG', value => {
+    if (value) {
+      return ['image/jpeg', 'image/png', 'application/pdf'].includes(value.type);
+    }
+    return true; // Permitir que el campo esté vacío
+  })
+  .test('fileSize', 'El tamaño del archivo no debe ser mayor a 10MB', value => {
+    if (value) {
+      return value.size <= 10485760; // 10 megabytes en bytes
+    }
+    return true; // Permitir que el campo esté vacío
+  }),
+  bank_certificate:yup.mixed().when('type_person', {
   is:"Persona Natural",
   then: (schema) => schema.test('filePresence', 'El archivo es requerido', value => {
     return value !== undefined && value !== null && value !== ''; // Verificar si el archivo está presente

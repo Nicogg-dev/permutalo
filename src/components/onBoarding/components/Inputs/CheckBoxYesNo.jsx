@@ -23,7 +23,7 @@ export default function CheckBoxYesNo(props) {
                 {...field}
                 sx={{
                 '&.Mui-checked': {
-                  color: "#002663",
+                  color: "#008593",
                     },
                 }}
                 name='yes'
@@ -42,7 +42,7 @@ export default function CheckBoxYesNo(props) {
               <Checkbox
                 sx={{
                 '&.Mui-checked': {
-                  color: "#002663",
+                  color: "#008593",
                     },
                 }}
                 checked={field.value === 0}

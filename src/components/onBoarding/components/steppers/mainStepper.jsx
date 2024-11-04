@@ -152,12 +152,13 @@ export default function MainSteppers() {
               {
                 activeStep === 1 && <BasicInfoTwo />
               }
-              <BasicInfo />
 
               <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
 
-                <Button type="submit" variant="contained" sx={{ margin: "auto", backgroundColor: '#002663', color: '#fff', textTransform: 'none', padding: '6px 16px' }} disabled={!enableButton}>
-                  Enviar y Registrarme
+                <Button type="submit" variant="contained" sx={{ margin: "auto", backgroundColor: '#008593', color: '#fff', textTransform: 'none', padding: '6px 16px' }} disabled={!enableButton}>
+                  {
+                    isLastStep() ? 'Finalizar' : 'Siguiente'
+                  }
                 </Button>
               </Box>
             </React.Fragment>

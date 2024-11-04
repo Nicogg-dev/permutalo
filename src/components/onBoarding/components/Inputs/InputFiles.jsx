@@ -44,7 +44,7 @@ export default function InputFile(props) {
               <Button
                 variant="contained"
                 component="span"
-                sx={{ backgroundColor: '#002663', color: '#fff', textTransform: 'none', padding: '2px 16px' }}
+                sx={{ backgroundColor: '#008593', color: '#fff', textTransform: 'none', padding: '2px 16px' }}
                 startIcon={<CloudUploadIcon />}
               >
                 Subir Archivo

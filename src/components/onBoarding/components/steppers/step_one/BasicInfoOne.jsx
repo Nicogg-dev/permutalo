@@ -3,13 +3,8 @@ import { FormContext } from '@/src/context/FormContext';
 import {  Grid, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material';
 import TextFields from '../../Inputs/TextField';
 import SelectInput from '../../Inputs/Selects';
-import CheckBoxYesNo from '../../Inputs/CheckBoxYesNo';
 import InputFile from '../../Inputs/InputFiles';
 import { countries, typeOfPerson, typeOfDocument, departamentsColombia, ciudadesColombia } from '@/src/utils/variables';
-import getCitiesByCountry from '@/src/utils/getCountries';
-import DynamicTable from '../components/basicInfo/partners';
-import FinalBeneficiary from '../components/basicInfo/finalBeneficiary';
-import Representante from '../components/basicInfo/representante';
 
 export default function BasicInfoOne() {
 
@@ -104,7 +99,7 @@ export default function BasicInfoOne() {
                     name="value_property"
                     type="number"
                     size="small"
-                    error={errors.value_property}
+                    error={errors.nombre}
                     control={control}
                     fullWidth
 
@@ -116,7 +111,7 @@ export default function BasicInfoOne() {
                     name="meters"
                     type="number"
                     size="small"
-                    error={errors.meters}
+                    error={errors.nombre}
                     control={control}
                     fullWidth
 
@@ -128,7 +123,7 @@ export default function BasicInfoOne() {
                     name="number_rooms"
                     type="number"
                     size="small"
-                    error={errors.number_rooms}
+                    error={errors.nombre}
                     control={control}
                     fullWidth
 
@@ -140,7 +135,7 @@ export default function BasicInfoOne() {
                     name="number_bathrooms"
                     type="number"
                     size="small"
-                    error={errors.number_bathrooms}
+                    error={errors.nombre}
                     control={control}
                     fullWidth
 
@@ -154,7 +149,7 @@ export default function BasicInfoOne() {
                     size="small"
                     multiline
                     rows={4}
-                    error={errors.description}
+                    error={errors.nombre}
                     control={control}
                     fullWidth
                 />

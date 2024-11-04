@@ -1,2 +1,7 @@
 node_modules
 .env
+.next
+.next/
+.next/server/app-paths-manifest.json
+.next/server/app/onBoarding/page.js
+.next/server/app/onBoarding/page_client-reference-manifest.js

@@ -1,22 +1,10 @@
-import Nabvar from "@/src/components/onBoarding/components/navbar.jsx";
 import { FormContextProvider } from "@/src/context/FormContext";
 import { Box } from "@mui/material";
 import styles from "./onboarding.module.css";
 
 export const metadata = {
-  title: "Benky - Onboarding",
+  title: "Permutalo",
   description: "Onboarding",
-  icons: {
-    icon:[
-        '/logo-isotipo-benky.png'
-    ],
-    apple:[
-        '/logo-isotipo-benky.png'
-    ],
-    shortcut:[
-        '/logo-isotipo-benky.png'
-    ],
-  },
 };
 
 export default function RootLayout({ children }) {

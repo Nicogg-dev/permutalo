@@ -39,7 +39,7 @@ export const MultipleSelects = ({
                         // defaultValue={defaultValue}
                         disabled={disabled}
                         onBlur={onBlur}
-                        value={list.filter((item) => value?.includes(item.id))}
+                        value={list.filter((item) => value?.includes(item?.id))}
                         options={list}
                         onChange={(_, newValue) => {
                             const selectedItem = newValue.map(

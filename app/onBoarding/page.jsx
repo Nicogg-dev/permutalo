@@ -4,11 +4,9 @@ import styles from "./onboarding.module.css";
 import MainSteppers from "@/src/components/onBoarding/components/steppers/mainStepper";
 import { useSession } from "next-auth/react";
 
-const steps = ['INFORMACIÓN BÁSICA', 'INFORMACIÓN DE CONTACTO', 'INFORMACIÓN REPRESENTANTES LEGALES: PRINCIPALES Y SUPLENTES','INFORMACIÓN FINANCIERA','DECLARACIÓN ORIGEN DE BIENES Y FONDOS','DECLARACIONES','INFORMACIÓN DE LOS CONTROLANTES Y SOCIOS (O ACCIONISTAS) CON EL PORCENTAJE DE PARTICIPACIÓN IGUAL O SUPERIOR AL 5%'];
-
 export default function Home() {
 
-  const { status } = useSession();
+  const { data: session, status } = useSession();
 
    if (status === "loading") {
      return <div></div>;

@@ -12,9 +12,11 @@ const Toast = Swal.mixin({
     }
   });
 
-  export const errorsAlert = (message) => {
+  const errorsAlert = (message) => {
     Toast.fire({
       icon: "error",
       title: message
     });
   }
+
+  export default errorsAlert;

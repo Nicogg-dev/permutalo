@@ -1,29 +1,15 @@
 import React, { use } from "react";
 import { FormContext } from "@/src/context/FormContext";
-import {
-    Checkbox,
-    Grid,
-    Paper,
-    Table,
-    TableBody,
-    TableCell,
-    TableContainer,
-    TableHead,
-    TableRow,
-    Typography,
-} from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import TextFields from "../../Inputs/TextField";
 import SelectInput from "../../Inputs/Selects";
-import InputFile from "../../Inputs/InputFiles";
-import {
-    countries,
-    typeOfPerson,
-    ciudadesColombia,
-} from "@/src/utils/variables";
+import { typeOfPerson, ciudadesColombia } from "@/src/utils/variables";
 import { MultipleSelects } from "../../Inputs/MultipleSelects";
+import CheckBoxYesNo from "../../Inputs/CheckBoxYesNo";
 
 export default function BasicInfoTwo() {
-    const { control, errors, watch, setValue } = React.useContext(FormContext);
+    const { control, errors, watch } = React.useContext(FormContext);
+    console.log(watch());
 
     return (
         <Grid container spacing={2}>
@@ -42,10 +28,9 @@ export default function BasicInfoTwo() {
                 <SelectInput
                     name="desired_property.type_of_property"
                     label="Tipo de propiedad"
-                    idLabel={"type_of_property"}
                     defaultValue={""}
                     control={control}
-                    error={errors.type_of_property}
+                    error={errors?.desired_property?.type_of_property}
                     list={typeOfPerson}
                     fullWidth
                     size="small"
@@ -54,10 +39,10 @@ export default function BasicInfoTwo() {
 
             <Grid item xs={4}>
                 <MultipleSelects
-                    label="Nombre"
+                    label="Ciudad de interés"
                     name="desired_property.location"
                     size="small"
-                    error={errors.name}
+                    error={errors?.desired_property?.location}
                     control={control}
                     list={ciudadesColombia}
                     fullWidth
@@ -65,86 +50,88 @@ export default function BasicInfoTwo() {
             </Grid>
 
             <Grid item xs={4}>
-                <Typography variant="h6" fontWeight={600} component="h3">
-                    ¿Deseas que tu propiedad sea amoblada?
+                <Typography variant="inherit" component="h3">
+                    ¿Estás dispuesto a recibir propiedades de mayor valor?
                 </Typography>
-                <Checkbox onClick={(e) => {
-                    if(e.target.checked){
-                        setValue('desired_property.higher_value', true)
-                    }
-                }} 
-                checked={watch('desired_property.higher_value')}>Yes</Checkbox>
-                <Checkbox onClick={(e) => {
-                    if(e.target.checked){
-                        setValue('desired_property.higher_value', false)
-                    }
-                }} 
-                checked={watch('desired_property.higher_value')}>No</Checkbox>
+                <CheckBoxYesNo
+                    name="desired_property.higher_value"
+                    size="small"
+                    error={errors?.desired_property?.higher_value}
+                    control={control}
+                    list={ciudadesColombia}
+                    fullWidth
+                />
+                {watch("desired_property.higher_value") === 1 && (
+                    <TextFields
+                        sx={{ marginTop: "1rem", marginBottom: "2rem" }}
+                        label="¿Cuál es el valor máximo que estás dispuesto a pagar?"
+                        name="desired_property.max_value"
+                        type="number"
+                        size="small"
+                        error={errors?.desired_property?.max_value}
+                        control={control}
+                        fullWidth
+                    />
+                )}
+            </Grid>
+
+            <Grid item xs={4}>
+                <Typography variant="inherit" component="h3">
+                    ¿Estás dispuesto a recibir propiedades de menor valor?
+                </Typography>
+                <CheckBoxYesNo
+                    name="desired_property.lower_value"
+                    size="small"
+                    error={errors?.desired_property?.lower_value}
+                    control={control}
+                    list={ciudadesColombia}
+                    fullWidth
+                />
+                {watch("desired_property.lower_value") === 1 && (
+                    <TextFields
+                        sx={{ marginTop: "1rem", marginBottom: "2rem" }}
+                        label="¿Cuál es el valor máximo que estás dispuesto a pagar?"
+                        name="desired_property.max_value"
+                        type="number"
+                        size="small"
+                        error={errors?.desired_property?.max_value}
+                        control={control}
+                        fullWidth
+                    />
+                )}
             </Grid>
 
             <Grid item xs={4}>
                 <SelectInput
-                    name="city"
-                    label="Ciudad"
-                    idLabel={"city"}
+                    name="desired_property.measure"
+                    label="¿Cuántos metros cuadrados tiene tu propiedad ideal?"
                     defaultValue={""}
                     control={control}
-                    error={errors.city}
-                    list={ciudadesColombia}
+                    error={errors?.desired_property?.measure}
+                    list={["50-100", "100-150", "150-200", "250-300"]}
                     fullWidth
                     size="small"
                 />
             </Grid>
-            <Grid item xs={8}>
+
+            <Grid item xs={4}>
                 <TextFields
-                    label="Direccion de la propiedad"
-                    name="direction_property"
+                    label="¿Cuántas habitaciones tiene tu propiedad ideal?"
+                    name="desired_property.number_rooms"
+                    type="number"
                     size="small"
-                    error={errors.direction_property}
+                    error={errors?.desired_property?.number_rooms}
                     control={control}
                     fullWidth
                 />
             </Grid>
             <Grid item xs={4}>
                 <TextFields
-                    label="Valor aproximado de la propiedad"
-                    name="value_property"
+                    label="¿Cuántos baños tiene tu propiedad ideal?"
+                    name="desired_property.number_bathrooms"
                     type="number"
                     size="small"
-                    error={errors.nombre}
-                    control={control}
-                    fullWidth
-                />
-            </Grid>
-            <Grid item xs={4}>
-                <TextFields
-                    label="¿Cuántos metros cuadrados tiene tu propiedad?"
-                    name="meters"
-                    type="number"
-                    size="small"
-                    error={errors.nombre}
-                    control={control}
-                    fullWidth
-                />
-            </Grid>
-            <Grid item xs={4}>
-                <TextFields
-                    label="¿Cuántas habitaciones tiene tu propiedad?"
-                    name="number_rooms"
-                    type="number"
-                    size="small"
-                    error={errors.nombre}
-                    control={control}
-                    fullWidth
-                />
-            </Grid>
-            <Grid item xs={4}>
-                <TextFields
-                    label="¿Cuántos baños tiene tu propiedad?"
-                    name="number_bathrooms"
-                    type="number"
-                    size="small"
-                    error={errors.nombre}
+                    error={errors?.desired_property?.number_bathrooms}
                     control={control}
                     fullWidth
                 />
@@ -152,27 +139,29 @@ export default function BasicInfoTwo() {
 
             <Grid item xs={12}>
                 <TextFields
-                    label="Desahógate y cuéntanos más de tu propiedad:"
-                    name="description"
+                    label="Desahógate y cuéntanos sobre tu hogar ideal:"
+                    name="desired_property.description"
                     size="small"
                     multiline
                     rows={4}
-                    error={errors.nombre}
+                    error={errors?.desired_property?.description}
                     control={control}
                     fullWidth
                 />
             </Grid>
-            <Grid item xs={12}>
-                <InputFile
-                    label="Muéstrale tu propiedad al mundo, sube fotos de tu propiedad"
-                    name="photos_property"
-                    size="small"
-                    error={errors.photos_property}
-                    control={control}
-                    fullWidth
-                    type="file"
-                />
-            </Grid>
+
+            {
+            errors && (
+                <Grid item xs={12}>
+                    <Typography
+                        variant="inherit"
+                        component="h3"
+                        sx={{ color: "red" }}
+                    >
+                        Por favor, completa los campos obligatorios.
+                    </Typography>
+                </Grid>
+            )}
         </Grid>
     );
 }

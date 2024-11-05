@@ -24,7 +24,6 @@ export default function MainSteppers() {
         React.useContext(FormContext);
 
     const [activeStep, setActiveStep] = React.useState(0);
-    console.log(activeStep);
 
     const [completed, setCompleted] = React.useState({});
     const [enableButton, setEnabledButton] = React.useState(true);

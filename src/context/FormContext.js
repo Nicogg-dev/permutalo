@@ -21,6 +21,7 @@ const schema = yup.object().shape({
         photos_property: yup
             .mixed()
             .test("filePresence", "El archivo es requerido", (value) => {
+                console.log(value);
                 return value !== undefined && value !== null && value !== ""; // Verificar si el archivo está presente
             })
             .test(
@@ -50,13 +51,10 @@ const schema = yup.object().shape({
     }),
     desired_property: yup.object().shape({
         type_of_property: yup.string().required("Este campo es obligatorio"),
-        location: yup.string().required("Este campo es obligatorio"),
+        location: yup.array().of(yup.string().required("Cada elemento debe ser un string")).min(1, "Este campo es obligatorio"),
         higher_value: yup.number().required("Este campo es obligatorio"),
         lower_value: yup.number().required("Este campo es obligatorio"),
         measure: yup.string().required("Este campo es obligatorio"),
-        rooms: yup.string().required("Este campo es obligatorio"),
-        bathrooms: yup.string().required("Este campo es obligatorio"),
-        max_value: yup.string().required("Este campo es obligatorio"),
         number_rooms: yup.string().required("Este campo es obligatorio"),
         number_bathrooms: yup.string().required("Este campo es obligatorio"),
         description: yup.string(), // No es obligatorio
@@ -77,8 +75,14 @@ const FormContextProvider = ({ children }) => {
         control,
     } = useForm({
         resolver: yupResolver(schema),
-        defaultValues: {},
+        defaultValues: {
+            desired_property: {
+                location: [],
+            }
+        },
     });
+
+    console.log(errors);
 
     return (
         <FormContext.Provider

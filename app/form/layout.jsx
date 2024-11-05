@@ -1,4 +1,4 @@
-import { FormContextProvider } from "@/src/context/FormContext";
+import { FormContextProvider } from "../../src/context/FormContext";
 import { Box } from "@mui/material";
 import styles from "./onboarding.module.css";
 

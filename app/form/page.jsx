@@ -1,7 +1,7 @@
 'use client';
 import { Box, Typography } from "@mui/material";
 import styles from "./onboarding.module.css";
-import MainSteppers from "@/src/components/onBoarding/components/steppers/mainStepper";
+import MainSteppers from "../../src/components/form/components/steppers/mainStepper";
 import { useSession } from "next-auth/react";
 
 export default function Home() {

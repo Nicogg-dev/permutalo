@@ -1,5 +1,5 @@
 import React, { use } from "react";
-import { FormContext } from "@/src/context/FormContext";
+import { FormContext } from "../../../../../../src/context/FormContext";
 import {
     Grid,
     Paper,
@@ -20,7 +20,7 @@ import {
     typeOfDocument,
     departamentsColombia,
     ciudadesColombia,
-} from "@/src/utils/variables";
+} from "../../../../../../src/utils/variables";
 
 export default function BasicInfoOne() {
     const { control, errors } = React.useContext(FormContext);

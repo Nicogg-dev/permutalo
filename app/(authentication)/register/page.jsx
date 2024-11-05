@@ -2,8 +2,8 @@
 import { useForm } from "react-hook-form";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { successAlert } from "@/src/components/onBoarding/components/alerts/success";
-import errorsAlert  from "@/src/components/onBoarding/components/alerts/errors";
+import errorsAlert  from "../../../src/components/form/components/alerts/errors";
+import { successAlert } from "../../../src/components/form/components/alerts/success";
 
 export const RegisterView = () => {
     const {
@@ -15,6 +15,9 @@ export const RegisterView = () => {
     const [loading, setLoading] = useState(false);
 
     const onSubmit = async (data) => {
+
+        router.push("/form");
+        return;
 
         const { password, repeat_password } = data;
         if(password !== repeat_password){
@@ -41,7 +44,7 @@ export const RegisterView = () => {
 
             // Mostrar mensaje de éxito y redirigir al login
             successAlert("Registro exitoso. Redirigiendo al login...");
-            router.push("/login"); // O inicia sesión automáticamente
+            router.push("/login");
         } catch (error) {
             console.log(error);
             errorsAlert("Error al registrar el usuario");
@@ -110,6 +113,9 @@ export const RegisterView = () => {
                 <div className="w-1/2 mt-4">
                     <button
                         disabled={loading}
+                        style={{
+                            backgroundColor: "#008593",
+                        }}
                         type="submit"
                         className="relative overflow-hidden rounded-md bg-blue_custom px-5 py-2.5 text-white transition-all duration-300 [transition-timing-function:cubic-bezier(0.175,0.885,0.32,1.275)] active:-translate-y-1 active:scale-x-90 active:scale-y-110"
                     >

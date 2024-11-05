@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Controller } from 'react-hook-form';
 import { Button, Typography, FormGroup, FormHelperText } from '@mui/material';
-import { FormContext } from '@/src/context/FormContext';
+import { FormContext } from '../../../../../src/context/FormContext';
 import { styled } from '@mui/material/styles';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 

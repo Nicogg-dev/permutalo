@@ -1,9 +1,9 @@
 import React, { use } from "react";
-import { FormContext } from "@/src/context/FormContext";
+import { FormContext } from "../../../../../../src/context/FormContext";
 import { Grid, Typography } from "@mui/material";
 import TextFields from "../../Inputs/TextField";
 import SelectInput from "../../Inputs/Selects";
-import { typeOfPerson, ciudadesColombia } from "@/src/utils/variables";
+import { typeOfPerson, ciudadesColombia } from "../../../../../../src/utils/variables";
 import { MultipleSelects } from "../../Inputs/MultipleSelects";
 import CheckBoxYesNo from "../../Inputs/CheckBoxYesNo";
 

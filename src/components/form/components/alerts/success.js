@@ -12,7 +12,7 @@ const Toast = Swal.mixin({
     }
   });
 
-  export const successAlert = (message,time=2000) => {
+export const successAlert = (message,time=2000) => {
     Toast.fire({
       icon: "success",
       title: message,

@@ -8,7 +8,7 @@ import Step from "@mui/material/Step";
 import StepButton from "@mui/material/StepButton";
 import Button from "@mui/material/Button";
 import "./mainStepper.css";
-import { FormContext } from "@/src/context/FormContext";
+import { FormContext } from "../../../../../src/context/FormContext";
 import BasicInfo from "./step_one/BasicInfoOne";
 import { successAlert } from "../alerts/success";
 import { errorsAlert } from "../alerts/errors";
@@ -45,13 +45,14 @@ export default function MainSteppers() {
     };
 
     const handleNext = () => {
+        console.log(errors);
         const newActiveStep =
             isLastStep() && !allStepsCompleted()
                 ? // It's the last step, but not all steps have been completed,
                   // find the first step that has been completed
                   steps.findIndex((_, i) => !(i in completed))
                 : activeStep + 1;
-        setActiveStep(newActiveStep);
+                setActiveStep(newActiveStep)
     };
 
     const handleBack = () => {
@@ -74,8 +75,15 @@ export default function MainSteppers() {
         setCompleted({});
     };
 
+    useEffect(() => {
+        if(errors.owner){
+            setActiveStep(0);
+        }
+    }, [errors]);
+
+
     const onSubmit = (data) => {
-        console.log("send");
+  
         setEnabledButton(false);
         const jsonData = {
             ...data,
@@ -127,6 +135,7 @@ export default function MainSteppers() {
             <Box
                 component="form"
                 display="flex"
+                id="form"
                 flexDirection="column"
                 onSubmit={handleSubmit(onSubmit)}
             >
@@ -188,10 +197,8 @@ export default function MainSteppers() {
                                     </Button>
                                 ) : (
                                     <Button 
-                                    onClick={() => {
-                                        handleComplete();
-                                        handleNext();
-                                    }}
+                                    type="button"
+                                    onClick={handleComplete}
                                     variant="contained" 
                                     sx={{
                                       margin: "auto",
